@@ -1,43 +1,51 @@
-Home - 
+__Navigation:__
+- NavContainer
+  - Logo
+  - Links
+  
+__Footer:__
+- LeftCol
+  - CalvinLogo
+  - CopyrightInfo
+- RightCol
+  - Address/contact
 
-Index.js - file
-Navigation.js - imported component
-Logo
-Links 
-Picture
-Description
-Footer.js
+__Home:__ 
+- Navigation
+- Main
+  - WelcomePicture
+  - EventsBox
+  - SubscribeBox
+  - ContactBox
+- Footer
 
-About
-index.js
-Navigation.js
-Logo
-Links
-Content.js 
-Picture
-Description (roles, major, comments ? )
-Footer.js
+__About:__
+- Navigation
+- Main
+  - LeftCol
+    - AboutSection
+    - CommitteeSection
+      - PeopleBox
+  - RightCol
+    - VisionSection
+    - AlumniSection
+- Footer
 
-Upcoming Events
-Index.js
-Navigation.js
-Logo
-Links
-Events.js 
-List of Upcoming events
-Footer.js
+__Events:__
+- Navigation
+- Main
+  - EventList
+  - AddEventForm
+- Footer
 
-Opportunity 
-Index.js
-Navigation.js
-Logo
-Links
-Opportunity.js
-List of internships/jobs
-PostForm.js
-To post an opportunity 
-Footer.js
-Shared components:
-Navigation
-Footer
-List (events and opportunities)
+__Opportunities:__
+- Navigation
+- Main
+  - OpportunitiesList
+  - AddOpportunityForm
+- Footer
+
+__Shared components:__
+- Navigation
+- Footer
+- POST form (events and opportunities)
