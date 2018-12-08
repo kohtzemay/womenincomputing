@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var combineLoaders = require('webpack-combine-loaders');
+
 
 module.exports = {
     entry: [
@@ -13,12 +14,9 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
-            { test: /\.css$/,  loader: 'style!css?modules!postcss' }
+            { test: /\.css$/, loader: "style-loader!css-loader" }
         ]
     },
-    postcss: [
-        require('autoprefixer')
-    ],
     plugins: [
     	new HtmlWebpackPlugin({template: __dirname + "/app/index.html"}),
     	new webpack.HotModuleReplacementPlugin()
@@ -27,7 +25,9 @@ module.exports = {
         port: 3001,
         proxy: { '/api/*': 'http://localhost:3000' },
         colors: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        inline: true,
+        hot: true
 
     }
 };

@@ -57,19 +57,3 @@ p, ul {
 ul {
     padding-left: 30px;
 }
-
-.main-content {
-  display: flex;
-  width: 1000px;
-  justify-content: center;
-}
-
-#left-col {
-  width: 450px;
-  float: left;
-}
-
-#right-col {
-  width: 450px;
-  float: right;
-}

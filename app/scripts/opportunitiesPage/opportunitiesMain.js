@@ -5,6 +5,8 @@ import OpportunitiesList from './OpportunitiesList';
 import OpportunitiesForm from './OpportunitiesForm';
 import { API_OPPS, POLL_INTERVAL } from '../global';
 
+import '../../css/opportunities.css';
+
 class OpportunitiesMain extends Component {
   constructor() {
     super();
@@ -59,11 +61,11 @@ class OpportunitiesMain extends Component {
       <div>
         <h1>Opportunities Page</h1>
 
-        <div id="left-col">
+        <div id="leftCol">
           <OpportunitiesList data={this.state.data} />
         </div>
 
-        <div id="right-col">
+        <div id="rightCol">
           <OpportunitiesForm handleSubmit={this.handleSubmit} />
         </div>
       </div>
