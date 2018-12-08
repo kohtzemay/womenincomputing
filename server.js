@@ -19,6 +19,15 @@ app.use(function(req, res, next) {
     next();
 });
 
+// Accessing Opportunities database
+// GET
+app.get('/api/opportunities', function(req, res) {
+  db.collection("opportunities").find({}).toArray(function(err, docs) {
+    if (err) throw err;
+    res.json(docs);
+  })
+});
+
 // app.get('/api/comments', function(req, res) {
 //     db.collection("comments").find({}).toArray(function(err, docs) {
 //         if (err) throw err;
@@ -84,7 +93,7 @@ app.listen(app.get('port'), function() {
 // This assumes that the MongoDB password has been set as an environment variable.
 var mongoURL = 'mongodb://cs336:' +
 	       process.env.MONGO_PASSWORD +
-           '@ds145667.mlab.com:45667/cs336';
+           '@ds155073.mlab.com:55073/cs-336';
 MongoClient.connect(mongoURL, function(err, dbConnection) {
     if (err) throw err;
     db = dbConnection;
