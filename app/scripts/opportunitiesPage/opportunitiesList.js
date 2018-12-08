@@ -4,8 +4,8 @@ class OpportunitiesList extends Component {
   constructor(props) {
     super(props);
   }
+  
   render() {
-    console.log(this.props.data);
     return (
       <div>
         {this.props.data.map(function(o) {

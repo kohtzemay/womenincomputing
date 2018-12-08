@@ -5,7 +5,7 @@ import {Router, Route, browserHistory} from 'react-router';
 // js components
 import HomeMain from './homePage/homeMain';
 import AboutMain from './aboutPage/aboutMain';
-import OpportunitiesMain from './opportunitiesPage/OpportunitiesMain'
+import OpportunitiesMain from './opportunitiesPage/OpportunitiesMain';
 
 import '../css/base.css';
 

@@ -28,27 +28,26 @@ app.get('/api/opportunities', function(req, res) {
   })
 });
 
-// app.get('/api/comments', function(req, res) {
-//     db.collection("comments").find({}).toArray(function(err, docs) {
-//         if (err) throw err;
-//         res.json(docs);
-//     });
-// });
-//
-// app.post('/api/comments', function(req, res) {
-//     var newComment = {
-//         id: Date.now(),
-//         author: req.body.author,
-//         text: req.body.text,
-//     };
-//     db.collection("comments").insertOne(newComment, function(err, result) {
-//         if (err) throw err;
-//         db.collection("comments").find({}).toArray(function(err, docs) {
-//             if (err) throw err;
-//             res.json(docs);
-//         });
-//     });
-// });
+app.post('/api/opportunities', function(req, res) {
+  console.log('this is firing');
+    var newOpportunity = {
+      id: Date.now(),
+      title: req.body.title,
+      companyName: req.body.companyName,
+      location: req.body.location,
+      description: req.body.description,
+      link: req.body.link,
+      type: req.body.type
+    };
+    db.collection("opportunities").insertOne(newOpportunity, function(err, result) {
+        if (err) throw err;
+        db.collection("opportunities").find({}).toArray(function(err, docs) {
+            if (err) throw err;
+            res.json(docs);
+        });
+    });
+});
+
 //
 // app.get('/api/comments/:id', function(req, res) {
 //     db.collection("comments").find({"id": Number(req.params.id)}).toArray(function(err, docs) {

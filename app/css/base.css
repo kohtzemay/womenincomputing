@@ -33,7 +33,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 5px solid #ddd;
     font-size: 2.5em;
 }
 
@@ -62,4 +62,14 @@ ul {
   display: flex;
   width: 1000px;
   justify-content: center;
+}
+
+#left-col {
+  width: 450px;
+  float: left;
+}
+
+#right-col {
+  width: 450px;
+  float: right;
 }

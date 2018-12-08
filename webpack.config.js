@@ -1,5 +1,6 @@
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -15,16 +16,18 @@ module.exports = {
             { test: /\.css$/,  loader: 'style!css?modules!postcss' }
         ]
     },
+    postcss: [
+        require('autoprefixer')
+    ],
     plugins: [
-	new HtmlWebpackPlugin({template: __dirname + "/app/index.html"}),
-	new webpack.HotModuleReplacementPlugin()
+    	new HtmlWebpackPlugin({template: __dirname + "/app/index.html"}),
+    	new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
         port: 3001,
         proxy: { '/api/*': 'http://localhost:3000' },
         colors: true,
-        historyApiFallback: true,
-        inline: true,
-        hot: true
+        historyApiFallback: true
+
     }
 };
