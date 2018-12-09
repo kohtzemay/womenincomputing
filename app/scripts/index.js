@@ -8,6 +8,8 @@ import AboutMain from './aboutPage/aboutMain';
 import OpportunitiesMain from './opportunitiesPage/OpportunitiesMain';
 
 import '../css/base.css';
+import '../css/about.css';
+import '../css/opportunities.css';
 
 ReactDOM.render((
   <div className="page">
