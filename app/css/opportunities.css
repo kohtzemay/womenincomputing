@@ -1,0 +1,15 @@
+.main-content {
+  display: flex;
+  width: 1000px;
+  justify-content: center;
+}
+
+#leftCol {
+  width: 450px;
+  float: left;
+}
+
+#rightCol {
+  width: 450px;
+  float: right;
+}
