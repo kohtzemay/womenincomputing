@@ -1,5 +1,7 @@
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var combineLoaders = require('webpack-combine-loaders');
+
 
 module.exports = {
     entry: [
@@ -12,12 +14,12 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
-            { test: /\.css$/,  loader: 'style!css?modules!postcss' }
+            { test: /\.css$/, loader: "style-loader!css-loader" }
         ]
     },
     plugins: [
-	new HtmlWebpackPlugin({template: __dirname + "/app/index.html"}),
-	new webpack.HotModuleReplacementPlugin()
+    	new HtmlWebpackPlugin({template: __dirname + "/app/index.html"}),
+    	new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
         port: 3001,
@@ -26,5 +28,6 @@ module.exports = {
         historyApiFallback: true,
         inline: true,
         hot: true
+
     }
 };

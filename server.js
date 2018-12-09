@@ -19,27 +19,34 @@ app.use(function(req, res, next) {
     next();
 });
 
-// app.get('/api/comments', function(req, res) {
-//     db.collection("comments").find({}).toArray(function(err, docs) {
-//         if (err) throw err;
-//         res.json(docs);
-//     });
-// });
-//
-// app.post('/api/comments', function(req, res) {
-//     var newComment = {
-//         id: Date.now(),
-//         author: req.body.author,
-//         text: req.body.text,
-//     };
-//     db.collection("comments").insertOne(newComment, function(err, result) {
-//         if (err) throw err;
-//         db.collection("comments").find({}).toArray(function(err, docs) {
-//             if (err) throw err;
-//             res.json(docs);
-//         });
-//     });
-// });
+// Accessing Opportunities database
+// GET
+app.get('/api/opportunities', function(req, res) {
+  db.collection("opportunities").find({}).toArray(function(err, docs) {
+    if (err) throw err;
+    res.json(docs);
+  })
+});
+
+app.post('/api/opportunities', function(req, res) {
+    var newOpportunity = {
+      id: Date.now(),
+      title: req.body.title,
+      companyName: req.body.companyName,
+      location: req.body.location,
+      description: req.body.description,
+      link: req.body.link,
+      type: req.body.type
+    };
+    db.collection("opportunities").insertOne(newOpportunity, function(err, result) {
+        if (err) throw err;
+        db.collection("opportunities").find({}).toArray(function(err, docs) {
+            if (err) throw err;
+            res.json(docs);
+        });
+    });
+});
+
 //
 // app.get('/api/comments/:id', function(req, res) {
 //     db.collection("comments").find({"id": Number(req.params.id)}).toArray(function(err, docs) {
@@ -84,7 +91,7 @@ app.listen(app.get('port'), function() {
 // This assumes that the MongoDB password has been set as an environment variable.
 var mongoURL = 'mongodb://cs336:' +
 	       process.env.MONGO_PASSWORD +
-           '@ds145667.mlab.com:45667/cs336';
+           '@ds155073.mlab.com:55073/cs-336';
 MongoClient.connect(mongoURL, function(err, dbConnection) {
     if (err) throw err;
     db = dbConnection;
