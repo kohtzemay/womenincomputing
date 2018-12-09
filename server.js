@@ -29,7 +29,6 @@ app.get('/api/opportunities', function(req, res) {
 });
 
 app.post('/api/opportunities', function(req, res) {
-  console.log('this is firing');
     var newOpportunity = {
       id: Date.now(),
       title: req.body.title,

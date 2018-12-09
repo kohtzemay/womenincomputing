@@ -35,67 +35,80 @@ class OpportunitiesForm extends Component {
   render() {
     return (
       <div className="form">
+        <h2>Add An Opportunity</h2>
 
         <form className="opportunitiesForm" onSubmit={this.handleSubmit}>
-          <label for="job-title">Title</label>
-          <input
-            type="text"
-            name="title"
-            placeholder="Job/internship title"
-            value={this.state.title}
-            onChange={this.handleFieldChange}
-            required
-          />
+          <div className="input-field">
+            <label for="job-title">Title</label>
+            <input
+              type="text"
+              name="title"
+              placeholder="Job/internship title"
+              value={this.state.title}
+              onChange={this.handleFieldChange}
+              required
+            />
+          </div>
 
-          <label for="company-name">Company Name</label>
-          <input
-            type="text"
-            name="companyName"
-            placeholder="Company name"
-            value={this.state.companyName}
-            onChange={this.handleFieldChange}
-            required
-          />
+          <div className="input-field">
+            <label for="company-name">Company Name</label>
+            <input
+              type="text"
+              name="companyName"
+              placeholder="Company name"
+              value={this.state.companyName}
+              onChange={this.handleFieldChange}
+              required
+            />
+          </div>
 
-          <label for="location">Location</label>
-          <input
-            type="text"
-            name="location"
-            placeholder="Austin, TX, US"
-            value={this.state.location}
-            onChange={this.handleFieldChange}
-            required
-          />
+          <div className="input-field">
+            <label for="location">Location</label>
+            <input
+              type="text"
+              name="location"
+              placeholder="Austin, TX, US"
+              value={this.state.location}
+              onChange={this.handleFieldChange}
+              required
+            />
+          </div>
 
-          <label for="description">Description</label>
-          <textarea
-            type="text"
-            name="description"
-            placeholder="Write a short description of the job/internship here..."
-            value={this.state.description}
-            onChange={this.handleFieldChange}
-            required
-          />
+          <div className="input-field">
+            <label for="description">Description</label>
+            <textarea
+              type="text"
+              name="description"
+              placeholder="Write a short description of the job/internship here..."
+              value={this.state.description}
+              onChange={this.handleFieldChange}
+              required
+            />
+          </div>
 
-          <label for="link">link</label>
-          <input
-            type="text"
-            name="link"
-            placeholder="Link to job application page"
-            value={this.state.link}
-            onChange={this.handleFieldChange}
-            required
-          />
+          <div className="input-field">
+            <label for="link">link</label>
+            <input
+              type="text"
+              name="link"
+              placeholder="Link to job application page"
+              value={this.state.link}
+              onChange={this.handleFieldChange}
+              required
+            />
+          </div>
 
-          <label for="type">Type</label>
-          <input
-            type="text"
-            name="type"
-            placeholder="Job or internship?"
-            value={this.state.type}
-            onChange={this.handleFieldChange}
-            required
-          />
+          <div className="input-field">
+            <label for="type">Type</label>
+            <input
+              type="text"
+              name="type"
+              placeholder="Job or internship?"
+              value={this.state.type}
+              onChange={this.handleFieldChange}
+              required
+            />
+          </div>
 
           <input type="submit" value="Post" />
         </form>

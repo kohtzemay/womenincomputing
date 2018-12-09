@@ -59,14 +59,16 @@ class OpportunitiesMain extends Component {
   render() {
     return (
       <div>
-        <h1>Opportunities Page</h1>
+        <h1>Opportunities</h1>
 
-        <div id="leftCol">
-          <OpportunitiesList data={this.state.data} />
-        </div>
+        <div className="main-content">
+          <div id="leftCol">
+            <OpportunitiesList data={this.state.data} />
+          </div>
 
-        <div id="rightCol">
-          <OpportunitiesForm handleSubmit={this.handleSubmit} />
+          <div id="rightCol">
+            <OpportunitiesForm handleSubmit={this.handleSubmit} />
+          </div>
         </div>
       </div>
     );
