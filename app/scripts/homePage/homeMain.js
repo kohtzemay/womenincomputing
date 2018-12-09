@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import homepageBoxes from '../boxComponent/homepageBoxes.js';
+import HomepageBoxes from './homepageBoxes.js';
 
-import '../css/base.css';
 
-ReactDOM.render(
-  <homepageBoxes  />,
-  document.getElementById('homePage')
-);
+var HomeMain = React.createClass ({
+
+render: function(){
+  return(
+    
+  <HomepageBoxes/ >
+)
+}
+
+});
 
 
 

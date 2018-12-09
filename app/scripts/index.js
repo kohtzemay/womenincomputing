@@ -7,6 +7,7 @@ import HomeMain from './homePage/homeMain';
 import AboutMain from './aboutPage/aboutMain';
 import OpportunitiesMain from './opportunitiesPage/OpportunitiesMain';
 
+import '../css/homepage.css';
 import '../css/base.css';
 
 ReactDOM.render((

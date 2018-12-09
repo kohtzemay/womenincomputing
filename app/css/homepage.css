@@ -1,0 +1,46 @@
+/*Homepage CSS*/
+
+.theGroup{
+
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.boxComp{
+    padding: 10px;
+    width: 25%;
+    height: 325px;
+    border-radius: 15px;
+    border: 1px solid gray;
+    box-shadow:  -1px 1px gray,
+         -2px 2px gray,
+         -3px 3px gray,
+         -4px 4px gray,
+         -5px 5px gray;
+}
+.head{
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.text{
+  margin: 10px;
+  color: DimGray;
+  text-align: left;
+
+
+}
+.input-field {
+  margin: 7px 0;
+  height: auto;
+}
+.event-local{
+  color: black;
+  font-weight: bold;
+}
+
+.theButton{
+  float: right;
+}

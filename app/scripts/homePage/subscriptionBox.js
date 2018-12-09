@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-DOM';
 
-var subscriptionBox = React.createClass({
+var SubscriptionBox = React.createClass({
   getInitialState:
   function() {
     return {name: '', email: ''};
@@ -37,18 +37,32 @@ var subscriptionBox = React.createClass({
     return(
       <form className="emailForm" onSubmit={this.handleSubmit}>
 
-      <input
-      type="text" placeHolder= "Enter your first and last name" value={this.state.name}
-      onChange={this.handleNameChange}
-      />
+      <div className="input-field">
+        <label for= "name-text">Name</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter your Name"
+          value={this.state.name}
+          onChange={this.handleNameChange}
+          required
+        />
+      </div>
 
-      <input
-      type="text" placeHolder="Enter your email" value={this.state.email}
-      onChange={this.handleEmailChange}
-      />
+      <div className="input-field">
+        <label for="email-text">Email</label>
+        <input
+          type="text"
+          placeholder="Enter your email"
+          value={this.state.email}
+          onChange={this.handleEmailChange}
+          required
+        />
+      </div>
 
-      <input type="submit" value="Post"/>
+      <input className="theButton" type="submit" value="Post"/>
       </form>
+
 
     );
   }
@@ -58,4 +72,4 @@ var subscriptionBox = React.createClass({
 
 });
 
-module.exports = subscriptionBox;
+module.exports = SubscriptionBox;
