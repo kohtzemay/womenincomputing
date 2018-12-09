@@ -1,13 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-class HomeMain extends Component {
+import HomepageBoxes from './homepageBoxes.js';
 
-  render() {
-    return (
-      <div>Home page</div>
-    );
-  }
 
+var HomeMain = React.createClass ({
+
+render: function(){
+  return(
+  <div className="wholePage">
+  <img className="HomePageImage" src="/static/homeImg.png" alt="HomePage Image"/>
+  <HomepageBoxes/ >
+  </div>
+)
 }
+
+});
+
+
 
 export default HomeMain;

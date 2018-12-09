@@ -8,6 +8,7 @@ import AboutMain from './aboutPage/aboutMain';
 import OpportunitiesMain from './opportunitiesPage/OpportunitiesMain';
 
 import '../css/navbar.css';
+import '../css/homepage.css';
 import '../css/base.css';
 import '../css/about.css';
 import '../css/opportunities.css';
