@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
+import Navbar from '../navbar/navbar';
 import OpportunitiesList from './OpportunitiesList';
 import OpportunitiesForm from './OpportunitiesForm';
 import { API_OPPS, POLL_INTERVAL } from '../global';
@@ -59,15 +60,18 @@ class OpportunitiesMain extends Component {
   render() {
     return (
       <div>
-        <h1>Opportunities</h1>
+        <Navbar />
+        <div className="page">
+          <h1>Opportunities</h1>
 
-        <div className="main-content">
-          <div id="leftCol">
-            <OpportunitiesList data={this.state.data} />
-          </div>
+          <div className="main-content">
+            <div id="leftCol">
+              <OpportunitiesList data={this.state.data} />
+            </div>
 
-          <div id="rightCol">
-            <OpportunitiesForm handleSubmit={this.handleSubmit} />
+            <div id="rightCol">
+              <OpportunitiesForm handleSubmit={this.handleSubmit} />
+            </div>
           </div>
         </div>
       </div>
