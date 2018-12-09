@@ -1,10 +1,14 @@
 body {
     background: #fff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.7;
     margin: 0;
     padding: 30px;
+}
+
+.page {
+  margin: 50px;
 }
 
 a {
@@ -33,13 +37,13 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    border-bottom: 5px solid #ddd;
     font-size: 2.5em;
+    color: #3a3a3a;
 }
 
 h2 {
-    border-bottom: 1px solid #eee;
-    font-size: 2em;
+    font-size: 1.5em;
+    color: rgb(255, 80, 80);
 }
 
 h3 {
@@ -47,7 +51,8 @@ h3 {
 }
 
 h4 {
-    font-size: 1.2em;
+    font-size: 15px;
+    margin: 0;
 }
 
 p, ul {
@@ -56,4 +61,53 @@ p, ul {
 
 ul {
     padding-left: 30px;
+}
+
+
+label {
+  width: 100px;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+input {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #ddd;
+}
+
+textarea {
+  width: 300px;
+  border: 2px solid #ddd;
+  font-family: 'Arial', sans-serif;
+  padding: 10px;
+  height: 50px;
+
+/*Homepage CSS*/
+#boxComp {
+    padding: 10px;
+    width: 20%;
+    height: 300px;
+    border-radius: 15px;
+    border: 1px solid gray;
+    box-shadow:  -1px 1px gray,
+         -2px 2px gray,
+         -3px 3px gray,
+         -4px 4px gray,
+         -5px 5px gray;
+}
+.head{
+  color: red;
+  font-weight: bold;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.text{
+  margin: 10px;
+  color: DimGray;
+  text-align: center;
+
+
 }

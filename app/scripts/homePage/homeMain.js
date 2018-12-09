@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-class HomeMain extends Component {
+import homepageBoxes from '../boxComponent/homepageBoxes.js';
 
-  render() {
-    return (
-      <div>What's up</div>
-    );
-  }
+import '../css/base.css';
 
-}
+ReactDOM.render(
+  <homepageBoxes  />,
+  document.getElementById('homePage')
+);
+
+
 
 export default HomeMain;
