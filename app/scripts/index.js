@@ -6,7 +6,7 @@ import { Router, Route, browserHistory, Switch } from 'react-router';
 import HomeMain from './homePage/homeMain';
 import AboutMain from './aboutPage/aboutMain';
 import OpportunitiesMain from './opportunitiesPage/OpportunitiesMain';
-
+import EventsMain from './EventsPage/EventsMain';
 import '../css/navbar.css';
 import '../css/homepage.css';
 import '../css/base.css';
@@ -18,6 +18,7 @@ ReactDOM.render(
     <Route path="/" component={HomeMain}/>
     <Route path="/about" component={AboutMain}/>
     <Route path="/opportunities" component={OpportunitiesMain}/>
+    <Route path="/Events" component={EventsMain}/>
   </Router>,
   document.getElementById('content')
 );
