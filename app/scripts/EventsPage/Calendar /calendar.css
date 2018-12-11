@@ -1,4 +1,8 @@
-
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
 .clearfix:after {
     visibility: hidden;
     display: block;

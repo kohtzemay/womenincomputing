@@ -12,6 +12,7 @@ import '../css/homepage.css';
 import '../css/base.css';
 import '../css/about.css';
 import '../css/opportunities.css';
+import '../css/event.css';
 
 ReactDOM.render(
   <Router history={browserHistory}>

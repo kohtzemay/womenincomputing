@@ -7,8 +7,7 @@ class EventsList extends Component {
 
   render() {
     return (
-      <div>
-        <h2> </h2>
+      <div> 
         {this.props.data.map(function(o) {
           if (o.type == "internship") {
             return (
@@ -44,5 +43,6 @@ class EventsList extends Component {
   }
 
 }
+
 
 export default EventsList;
