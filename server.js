@@ -47,6 +47,23 @@ app.post('/api/opportunities', function(req, res) {
     });
 });
 
+//Post Emails to Database
+app.post('/api/emailSubscription', function(req, res) {
+    var newEmail = {
+      id: Date.now(),
+      name: req.body.name,
+      email: req.body.email,
+
+    };
+    db.collection("emails").insertOne(newEmail, function(err, result) {
+        if (err) throw err;
+        db.collection("emails").find({}).toArray(function(err, docs) {
+            if (err) throw err;
+            res.json(docs);
+        });
+    });
+});
+
 //
 // app.get('/api/comments/:id', function(req, res) {
 //     db.collection("comments").find({"id": Number(req.params.id)}).toArray(function(err, docs) {
