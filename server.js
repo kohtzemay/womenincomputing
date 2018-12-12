@@ -47,6 +47,35 @@ app.post('/api/opportunities', function(req, res) {
     });
 });
 
+
+
+
+
+app.get('/api/events', function(req, res) {
+  db.collection("events").find({}).toArray(function(err, docs) {
+    if (err) throw err;
+    res.json(docs);
+  })
+});
+
+app.post('/api/events', function(req, res) {
+    var newEvent = {
+      id: Date.now(),
+      title: req.body.title,
+      EventName: req.body.EventName,
+      location: req.body.location,
+      description: req.body.description,
+      link: req.body.link,
+      type: req.body.type
+    };
+    db.collection("events").insertOne(newevent, function(err, result) {
+        if (err) throw err;
+        db.collection("events").find({}).toArray(function(err, docs) {
+            if (err) throw err;
+            res.json(docs);
+        });
+    });
+});
 //
 // app.get('/api/comments/:id', function(req, res) {
 //     db.collection("comments").find({"id": Number(req.params.id)}).toArray(function(err, docs) {
