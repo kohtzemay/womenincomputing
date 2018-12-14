@@ -1,3 +1,8 @@
+// EventsList is the component that lists out all the available opportunities
+// pulled from the mLab database. It receives the list of events as a prop from
+// EventsMain and maps through them, sorting the events 
+// based on the "name" key. 
+
 import React, { Component } from 'react';
 
 class EventList extends Component {
