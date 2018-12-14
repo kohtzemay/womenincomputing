@@ -58,17 +58,16 @@ app.get('/api/events', function(req, res) {
   })
 });
 
+
 app.post('/api/events', function(req, res) {
     var newEvent = {
       id: Date.now(),
-      title: req.body.title,
-      EventName: req.body.EventName,
+      name: req.body.name,
+      date: req.body.date,
       location: req.body.location,
-      description: req.body.description,
-      link: req.body.link,
-      type: req.body.type
+      time: req.body.time
     };
-    db.collection("events").insertOne(newevent, function(err, result) {
+    db.collection("events").insertOne(newEvent, function(err, result) {
         if (err) throw err;
         db.collection("events").find({}).toArray(function(err, docs) {
             if (err) throw err;

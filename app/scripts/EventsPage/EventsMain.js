@@ -32,16 +32,18 @@ class EventsMain extends Component {
         this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error(API_OPPS, status, err.toString());
+        console.error(API_EVE, status, err.toString());
       }.bind(this)
     });
   }
 
+//
+
   handleSubmit(eve) {
-    var opps = this.state.data;
-    opp.id = Date.now();
-    var newOpps = opps.concat([opp]);
-    this.setState({ data: newOpps });
+    var events = this.state.data;
+    eve.id = Date.now();
+    var newEve = events.concat([eve]);
+    this.setState({ data: newEve });
 
     $.ajax({
       url: API_EVE,
@@ -49,10 +51,10 @@ class EventsMain extends Component {
       type: 'POST',
       data: eve,
       success: function(data) {
-        this.setState({data: eve});
+        this.setState({data: events});
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error(API_OPPS, status, err.toString());
+        console.error(API_EVE, status, err.toString());
       }.bind(this)
     });
   }
@@ -66,7 +68,7 @@ class EventsMain extends Component {
 
           <div className="main-content">
             <div id="leftCol">
-              <eventList data={this.state.data} />
+              <EventList data={this.state.data} />
             </div>
 
             <div id="rightCol">
