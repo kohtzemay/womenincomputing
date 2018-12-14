@@ -8,7 +8,7 @@ import { Router, Route, browserHistory, Switch } from 'react-router';
 // JS components
 import HomeMain from './homePage/homeMain';
 import AboutMain from './aboutPage/aboutMain';
-import OpportunitiesMain from './opportunitiesPage/OpportunitiesMain';
+import OpportunitiesMain from './opportunitiesPage/opportunitiesMain';
 import EventsMain from './EventsPage/EventsMain';
 
 // CSS components
