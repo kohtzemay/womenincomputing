@@ -12,9 +12,9 @@ class EventList extends Component {
         {this.props.data.map(function(o) {
           if (o.name == "Events") {
             return (
-              <div className=" name " key={o._id}>
+              <div className=" name " key={o.name}>
                  
-               
+                {o.name}<br />
                 {o.date} <br />
                 {o.location} <br />
                 <br />
@@ -29,8 +29,10 @@ class EventList extends Component {
         {this.props.data.map(function(o) {
           if (o.name == "Events") {
             return (
-              <div className="Events" key={o._id}>
+              <div className="Events" key={o._name}>
+              
                 {o.date} <br />
+                 {o.name}<br />
                 {o.location} <br />
                 <br />
                 {o.time}
