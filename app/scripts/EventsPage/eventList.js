@@ -1,11 +1,10 @@
-// EventsList is the component that lists out all the available opportunities
+// EventsList is the component that lists out all the available events
 // pulled from the mLab database. It receives the list of events as a prop from
-// EventsMain and maps through them, sorting the events 
-// based on the "name" key. 
+// EventsMain and maps through them.
 
 import React, { Component } from 'react';
 
-class EventList extends Component {
+class EventsList extends Component {
   constructor(props) {
     super(props);
   }
@@ -22,16 +21,10 @@ class EventList extends Component {
                 <h4>{o.name}</h4>
                 {o.date} <br />
                 {o.location} <br />
-                <br />
                 {o.time}
               </div>
             )
           }
         )}
-      </div>
-    );
-  }
 
-}
-
-export default EventList;
+export default EventsList;

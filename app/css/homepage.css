@@ -1,21 +1,32 @@
 /*Homepage CSS*/
 
-.wholePage{
+.wholePage
+{
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.centeringFactor{
+.centeringFactor
+{
   align-items: center;
 }
 
-.theGroup{
+.theGroup
+{
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 50px;
 }
 
-.boxComp{
+.emailForm
+{
+  margin: 15px;
+  justify-content: center;
+}
+
+.boxComp
+{
     padding: 10px;
     width: 25%;
     height: 325px;
@@ -27,32 +38,55 @@
          -4px 4px gray,
          -5px 5px gray;
 }
-.head{
+.head
+{
   color: rgb(255, 80, 80);
   font-weight: bold;
   font-size: 16px;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
-.text{
+
+.text
+{
   margin: 10px;
   color: DimGray;
   text-align: left;
 
 
 }
-.input-field {
-  margin: 7px 0;
+
+.input-field
+{
+
   height: auto;
 }
-.event-local{
+
+.event-local
+{
   color: black;
   font-weight: bold;
 }
+
 .HomePageImage{
-  margin: 10px;
   border-bottom: 5px solid;
   border-color: rgb(255, 80, 80);
   width: 100%;
   height: 90%;
+  margin-bottom: 30px;
+}
+.home
+{
+  width:50px;
+}
+.theButton
+{
+  display: table;
+  margin:auto;
+  margin-top: 25px;
+  width: 50%;
+}
+.inputBox
+{
+  width:60%;
 }

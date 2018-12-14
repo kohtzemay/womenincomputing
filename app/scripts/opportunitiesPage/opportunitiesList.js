@@ -1,3 +1,8 @@
+// OpportunitiesList is the component that lists out all the available opportunities
+// polled from the mLab database. It receives the list of opportunities as a prop from
+// OpportunitiesMain and maps through them, splitting them up by "job" and "internship"
+// based on the "type" key. 
+
 import React, { Component } from 'react';
 
 class OpportunitiesList extends Component {

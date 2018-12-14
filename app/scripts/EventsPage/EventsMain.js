@@ -4,7 +4,6 @@
 // the database for events and provides the AJAX for submission of new events
 // to the database.
 
-
 import React, { Component } from 'react';
 import $ from 'jquery';
 
@@ -87,6 +86,5 @@ class EventsMain extends Component {
     );
   }
 }
-
 
 export default EventsMain;

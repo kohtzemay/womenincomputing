@@ -1,5 +1,5 @@
+//This file contains data for about page
 import React, { Component } from 'react';
-import $ from 'jquery';
 
 import Navbar from '../navbar/navbar';
 
@@ -25,8 +25,6 @@ class AboutMain extends Component {
               events and conferences. Subscribe to our mailing list to be the first to hear about
               these events!
             </p>
-
-            <h2>Leadership</h2>
           </div>
 
           <div class="column">
@@ -35,7 +33,6 @@ class AboutMain extends Component {
                 in technology at Calvin College by creating
                 a sense of belonging in community and providing
                 opportunities to further develop technical skills. </p>
-            <p>AlumniSection</p>
             <h2>Goals</h2>
             <ul>
                 <li> Community with women in CS </li>

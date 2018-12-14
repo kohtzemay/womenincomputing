@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 });
 
 // Accessing Opportunities database
-// GET
+// GETs opportunities from the "opportunities" collection in mLab
 app.get('/api/opportunities', function(req, res) {
   db.collection("opportunities").find({}).toArray(function(err, docs) {
     if (err) throw err;
@@ -28,6 +28,8 @@ app.get('/api/opportunities', function(req, res) {
   })
 });
 
+
+// POSTs new opportunities to the "opportunities" collection in mLab
 app.post('/api/opportunities', function(req, res) {
     var newOpportunity = {
       id: Date.now(),
@@ -47,17 +49,12 @@ app.post('/api/opportunities', function(req, res) {
     });
 });
 
-
-
-
-
 app.get('/api/events', function(req, res) {
   db.collection("events").find({}).toArray(function(err, docs) {
     if (err) throw err;
     res.json(docs);
   })
 });
-
 
 app.post('/api/events', function(req, res) {
     var newEvent = {
@@ -70,45 +67,23 @@ app.post('/api/events', function(req, res) {
     db.collection("events").insertOne(newEvent, function(err, result) {
         if (err) throw err;
         db.collection("events").find({}).toArray(function(err, docs) {
+
+//Post Emails to Database
+app.post('/api/emailSubscription', function(req, res) {
+    var newEmail = {
+      id: Date.now(),
+      name: req.body.name,
+      email: req.body.email,
+
+    };
+    db.collection("emails").insertOne(newEmail, function(err, result) {
+        if (err) throw err;
+        db.collection("emails").find({}).toArray(function(err, docs) {
             if (err) throw err;
             res.json(docs);
         });
     });
 });
-//
-// app.get('/api/comments/:id', function(req, res) {
-//     db.collection("comments").find({"id": Number(req.params.id)}).toArray(function(err, docs) {
-//         if (err) throw err;
-//         res.json(docs);
-//     });
-// });
-//
-// app.put('/api/comments/:id', function(req, res) {
-//     var updateId = Number(req.params.id);
-//     var update = req.body;
-//     db.collection('comments').updateOne(
-//         { id: updateId },
-//         { $set: update },
-//         function(err, result) {
-//             if (err) throw err;
-//             db.collection("comments").find({}).toArray(function(err, docs) {
-//                 if (err) throw err;
-//                 res.json(docs);
-//             });
-//         });
-// });
-//
-// app.delete('/api/comments/:id', function(req, res) {
-//     db.collection("comments").deleteOne(
-//         {'id': Number(req.params.id)},
-//         function(err, result) {
-//             if (err) throw err;
-//             db.collection("comments").find({}).toArray(function(err, docs) {
-//                 if (err) throw err;
-//                 res.json(docs);
-//             });
-//         });
-// });
 
 app.use('*', express.static(APP_PATH));
 

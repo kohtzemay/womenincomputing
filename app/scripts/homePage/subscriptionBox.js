@@ -1,5 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-DOM';
+
+{/*Creates the Form for the homepage's subscription box it sends the data to
+the database so we can track who is on the email list and who isn't*/}
+
 
 var SubscriptionBox = React.createClass({
   getInitialState:
@@ -38,8 +41,9 @@ var SubscriptionBox = React.createClass({
       <form className="emailForm" onSubmit={this.handleSubmit}>
 
       <div className="input-field">
-        <label for= "name-text">Name</label>
+        <label className="home" htmlFor= "name-text">Name</label>
         <input
+        className = "inputBox"
           type="text"
           name="name"
           placeholder="Enter your Name"
@@ -50,9 +54,11 @@ var SubscriptionBox = React.createClass({
       </div>
 
       <div className="input-field">
-        <label for="email-text">Email</label>
+        <label className="home" htmlFor="email-text">Email</label>
         <input
-          type="text"
+        className = "inputBox"
+          type="email"
+          name="email"
           placeholder="Enter your email"
           value={this.state.email}
           onChange={this.handleEmailChange}

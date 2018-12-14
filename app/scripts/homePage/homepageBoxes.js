@@ -1,7 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-DOM';
-
+import $ from 'jquery';
 import SubscriptionBox from './subscriptionBox';
+import {API_EMAILS} from "../global";
+
+{/*This creates the boxes on the homepage and makes sure they act relative to one anpther also handles
+  the email submissions with ajax*/}
 
 var HomepageBoxes = React.createClass({
 
@@ -11,7 +14,7 @@ handleEmailSubmit: function(email){
   var newEmails = emails.concat([email]);
   this.setState({data: newEmails});
   $.ajax({
-     url: this.props.url,
+     url: API_EMAILS,
      dataType: 'json',
      type: 'POST',
      data: email,
@@ -23,7 +26,7 @@ handleEmailSubmit: function(email){
      ,
      error: function(xhr, status, err) {
        this.setState({data: emails});
-       console.error(this.props.url, status, err.toString());
+       console.error(API_EMAILS, status, err.toString());
      }.bind(this)
    });
 },
