@@ -21,21 +21,40 @@
 }
 
 #menu-items {
-  flex: 5;
-  padding-right: 100px;
-  margin-top: -10px;
+  flex: 7;
+  margin-top: -20px;
+  padding-top: 10px;
 }
 
 #menu-items ul {
   display: flex;
-  justify-content: space-between;
+  padding-left: 0;
+  margin: 0;
+  height: 70px;
+  margin-top: -10px;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 #menu-items ul li {
   display: inline-block;
 }
 
-#menu-items ul li a {
-  color: #000;
+#menu-items ul a li {
+  color: gray;
   font-weight: bold;
+  transition: .5s;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 75px;
+}
+
+#menu-items ul a:hover {
+  text-decoration: none;
+}
+
+#menu-items ul a:hover li {
+  background-color: #eee;
+  color: #000;
 }

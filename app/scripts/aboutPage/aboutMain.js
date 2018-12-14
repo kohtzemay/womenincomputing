@@ -1,5 +1,5 @@
+//This file contains data for about page
 import React, { Component } from 'react';
-import $ from 'jquery';
 
 import Navbar from '../navbar/navbar';
 

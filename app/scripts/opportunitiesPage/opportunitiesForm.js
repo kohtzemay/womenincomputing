@@ -1,3 +1,8 @@
+// OpportunitiesForm renders the form that allows users to submit new opportunities
+// to the database. It holds the state attributes for a new opportunity and calls
+// the handleSubmit function defined in OpportunitiesMain when the Submit button is
+// clicked. 
+
 import React, { Component } from 'react';
 
 class OpportunitiesForm extends Component {

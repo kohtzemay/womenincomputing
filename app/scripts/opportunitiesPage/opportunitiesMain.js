@@ -1,3 +1,9 @@
+// OpportunitiesMain is the main component for the Opportunities page, which includes the
+// opportunitiesList and opportunitiesForm components. It also stores the state for the
+// list of opportunities from the database. This component contains functions that poll
+// the database for opportunities and provides the AJAX for submission of new opportunities
+// to the database. 
+
 import React, { Component } from 'react';
 import $ from 'jquery';
 
