@@ -13,7 +13,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
-            { test: /\.css$/, loader: "style-loader!css-loader" }
+            { test: /\.css$/, loader: "style-loader!css-loader" },
+            { test: /\.(png|jpg|gif)$/, loader: 'file-loader', options: {} }
         ]
     },
     plugins: [

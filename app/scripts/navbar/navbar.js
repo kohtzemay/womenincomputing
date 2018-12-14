@@ -1,17 +1,19 @@
 // Navbar renders the navigation bar seen at the top of the page. It links out to
 // all the available pages on the website using the Link component from react-router.
 // It also links out to the Girls Who Code Calvin College website page, which is an
-// external link, so a regular <a> tag has to be used instead. 
+// external link, so a regular <a> tag has to be used instead.
 
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+
+import WicLogo from '../../img/logo.png';
 
 class Navbar extends Component {
 
   render() {
     return (
       <div id="navbar">
-        <div id="logo"><Link to='/'><img src="/static/logo.png" /></Link></div>
+        <div id="logo"><Link to='/'><img src={WicLogo} /></Link></div>
         <div id="menu-items">
           <ul>
             <Link to='/'><li>Home</li></Link>
