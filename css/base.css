@@ -1,0 +1,89 @@
+body {
+    background: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+  margin: 50px;
+  margin-top: 100px;
+  padding-top: 50px;
+}
+
+a {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+    font-size: 12px;
+    margin: 0 2px;
+    padding: 0 5px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+    margin: 0 0 15px;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #3a3a3a;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: rgb(255, 80, 80);
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 15px;
+    margin: 0;
+}
+
+p, ul {
+    margin: 15px 0;
+}
+
+ul {
+    padding-left: 30px;
+}
+
+
+label {
+  width: 100px;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+input {
+  padding: 5px;
+  width: 50%;
+  border: 2px solid #ddd;
+}
+
+textarea {
+  width: 300px;
+  border: 2px solid #ddd;
+  font-family: 'Arial', sans-serif;
+  padding: 10px;
+  height: 50px;
+}
