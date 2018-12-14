@@ -7,4 +7,3 @@ npm-debug.log
 /*.env
 dist/
 .passwordrc
-./package-lock.json
