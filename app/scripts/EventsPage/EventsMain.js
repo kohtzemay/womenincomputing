@@ -1,3 +1,10 @@
+// EventsMain is the main component for the events page, which includes the
+// eventsList and eventsForm components.  Events main stores the state for the
+// list of Events from the database. This component contains functions that pull
+// the database for events and provides the AJAX for submission of new events
+// to the database.
+
+
 import React, { Component } from 'react';
 import $ from 'jquery';
 
