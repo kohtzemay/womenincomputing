@@ -49,6 +49,30 @@ app.post('/api/opportunities', function(req, res) {
     });
 });
 
+app.get('/api/events', function(req, res) {
+  db.collection("events").find({}).toArray(function(err, docs) {
+    if (err) throw err;
+    res.json(docs);
+  })
+});
+
+app.post('/api/events', function(req, res) {
+    var newEvent = {
+      id: Date.now(),
+      name: req.body.name,
+      date: req.body.date,
+      location: req.body.location,
+      time: req.body.time
+    };
+    db.collection("events").insertOne(newEvent, function(err, result) {
+        if (err) throw err;
+        db.collection("events").find({}).toArray(function(err, docs) {
+          if (err) throw err;
+          res.json(docs);
+        });
+    });
+});
+
 //Post Emails to Database
 app.post('/api/emailSubscription', function(req, res) {
     var newEmail = {

@@ -1,169 +1,90 @@
+// EventsMain is the main component for the events page, which includes the
+// eventsList and eventsForm components.  Events main stores the state for the
+// list of Events from the database. This component contains functions that pull
+// the database for events and provides the AJAX for submission of new events
+// to the database.
+
 import React, { Component } from 'react';
 import $ from 'jquery';
 
 import Navbar from '../navbar/navbar';
-
-
-import { API_OPPS, POLL_INTERVAL } from '../global';
+import EventsList from './eventsList';
+import EventsForm from './eventsForm';
+import { API_EVE, POLL_INTERVAL } from '../global';
 
 import '../../css/event.css';
 
-
-
-
-class EventsMain extends React.Component {
-    constructor(props) {
-        super(props);
-
-        var now = new Date();
-        
-        this.state = {
-            myEvents: [{
-                d: new Date(now.getFullYear(), now.getMonth(), 8, 8, 0),
-                text: 'Green box to post office',
-                color: '#6e7f29'
-            }, {
-                start: new Date(now.getFullYear(), now.getMonth(), 8, 8, 45),
-                end: new Date(now.getFullYear(), now.getMonth(), 8, 9, 0),
-                text: 'Quick mtg. with Martin',
-                color: '#de3d83'
-            }, {
-                start: new Date(now.getFullYear(), now.getMonth(), 8, 9, 30),
-                end: new Date(now.getFullYear(), now.getMonth(), 8, 10, 30),
-                text: 'Product team mtg.',
-                color: '#f67944'
-            }, {
-                start: new Date(now.getFullYear(), now.getMonth(), 8, 11, 0),
-                end: new Date(now.getFullYear(), now.getMonth(), 8, 11, 30),
-                text: 'Stakeholder mtg.',
-                color: '#f67944'
-            }, {
-                start: new Date(now.getFullYear(), now.getMonth(), 8, 13, 0),
-                end: new Date(now.getFullYear(), now.getMonth(), 8, 13, 30),
-                text: 'Lunch @ Butcher\'s',
-                color: '#00aabb'
-            }, {
-                start: new Date(now.getFullYear(), now.getMonth(), 8, 15, 0),
-                end: new Date(now.getFullYear(), now.getMonth(), 8, 16, 0),
-                text: 'General orientation',
-                color: '#f67944'
-            }, {
-                d: (now.getMonth() + 1) + '/14',
-                text: 'Dexter BD',
-                color: '#37bbe4'
-            }, {
-                d: (now.getMonth() + 1) + '/5',
-                text: 'Luke BD',
-                color: '#37bbe4'
-            }, {
-                d: 'w3',
-                text: 'Employment (Semi-weekly)',
-                color: '#635045'
-            }, {
-                d: 'w5',
-                text: 'Employment (Semi-weekly)',
-                color: '#ff9966'
-            }, {
-                start: new Date(now.getFullYear(), 1, 7),
-                end: new Date(now.getFullYear(), 1, 25),
-                text: 'Dean OFF',
-                color: '#99ff33'
-            }, {
-                start: new Date(now.getFullYear(), 2, 5),
-                end: new Date(now.getFullYear(), 2, 14),
-                text: 'Mike OFF',
-                color: '#e7b300'
-            }, {
-                start: new Date(now.getFullYear(), 4, 7),
-                end: new Date(now.getFullYear(), 4, 16),
-                text: 'John OFF',
-                color: '#669900'
-            }, {
-                start: new Date(now.getFullYear(), 5, 1),
-                end: new Date(now.getFullYear(), 5, 11),
-                text: 'Carol OFF',
-                color: '#6699ff'
-            }, {
-                start: new Date(now.getFullYear(), 6, 2),
-                end: new Date(now.getFullYear(), 6, 17),
-                text: 'Jason OFF',
-                color: '#cc9900'
-            }, {
-                start: new Date(now.getFullYear(), 7, 6),
-                end: new Date(now.getFullYear(), 7, 14),
-                text: 'Ashley OFF',
-                color: '#339966'
-            }, {
-                start: new Date(now.getFullYear(), 8, 10),
-                end: new Date(now.getFullYear(), 8, 20),
-                text: 'Marisol OFF',
-                color: '#8701a9'
-            }, {
-                start: new Date(now.getFullYear(), 9, 1),
-                end: new Date(now.getFullYear(), 9, 12),
-                text: 'Sharon OFF',
-                color: '#cc6699'
-            }, {
-                d: '12/25',
-                text: 'Christmas Day',
-                color: '#ff0066'
-            }, {
-                d: '1/1',
-                text: 'New Year\'s day',
-                color: '#99ccff'
-            }, {
-                d: '4/1',
-                text: 'April Fool\'s Day',
-                color: '#ff6666'
-            }, {
-                d: '11/2',
-                text: 'File Form 720 for the third quarter',
-                color: '#a63e14'
-            }, {
-                d: '11/2',
-                text: 'File Form 730 and pay tax on wagers accepted during September',
-                color: '#a63e14'
-            }, {
-                d: '11/2',
-                text: 'File Form 2290 and pay the tax for vehicles first used during September',
-                color: '#a63e14'
-            }, {
-                d: '11/2',
-                text: 'File Form 941 for the third quarter',
-                color: '#a63e14'
-            }, {
-                d: '11/2',
-                text: 'Deposit FUTA owed through Sep if more than $500',
-                color: '#a63e14'
-            }, {
-                d: '11/30',
-                text: 'Deposit payroll tax for payments on Nov 21-24 if the semiweekly deposit rule applies',
-                color: '#a63e14'
-            }, {
-                d: '11/30',
-                text: 'File Form 730 and pay tax on wagers accepted during October',
-                color: '#a63e14'
-            }, {
-                d: '11/30',
-                text: 'File Form 2290 and pay the tax for vehicles first used during October',
-                color: '#a63e14'
-            }]
-        };
+class EventsMain extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: []
     }
-    render() {
-        return (
-            <mobiscroll.Eventcalendar
-                theme="ios"
-                display="inline"
-                data={this.state.myEvents}
-                view={{
-                    calendar: { type: 'month' },
-                    eventList: { type: 'month' }
-                }}
-            />
-        );
-    }    
+    this.loadFromServer = this.loadFromServer.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.loadFromServer();
+    setInterval(this.loadFromServer, POLL_INTERVAL);
+  }
+
+  loadFromServer() {
+    $.ajax({
+      url: API_EVE,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(API_EVE, status, err.toString());
+      }.bind(this)
+    });
+  }
+
+//
+
+  handleSubmit(eve) {
+    var events = this.state.data;
+    eve.id = Date.now();
+    var newEve = events.concat([eve]);
+    this.setState({ data: newEve });
+
+    $.ajax({
+      url: API_EVE,
+      dataType: 'json',
+      type: 'POST',
+      data: eve,
+      success: function(data) {
+        this.setState({data: events});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(API_EVE, status, err.toString());
+      }.bind(this)
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <div className="page">
+          <h1>Events</h1>
+
+          <div className="main-content">
+            <div id="leftCol">
+              <EventsList data={this.state.data} />
+            </div>
+
+            <div id="rightCol">
+              <EventsForm handleSubmit={this.handleSubmit} />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default EventsMain;
-

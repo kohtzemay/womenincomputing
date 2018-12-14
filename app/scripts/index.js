@@ -8,8 +8,8 @@ import { Router, Route, browserHistory, Switch } from 'react-router';
 // JS components
 import HomeMain from './homePage/homeMain';
 import AboutMain from './aboutPage/aboutMain';
+import EventsMain from './eventsPage/eventsMain';
 import OpportunitiesMain from './opportunitiesPage/opportunitiesMain';
-import EventsMain from './EventsPage/EventsMain';
 
 // CSS components
 import '../css/navbar.css';
@@ -24,7 +24,7 @@ ReactDOM.render(
     <Route path="/" component={HomeMain}/>
     <Route path="/about" component={AboutMain}/>
     <Route path="/opportunities" component={OpportunitiesMain}/>
-    <Route path="/Events" component={EventsMain}/>
+    <Route path="/events" component={EventsMain}/>
   </Router>,
   document.getElementById('content')
 );

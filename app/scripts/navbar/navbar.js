@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-import WicLogo from '../../img/logo.png';
+import WicLogo from './../../img/logo.png';
 
 class Navbar extends Component {
 
