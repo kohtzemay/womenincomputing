@@ -2,14 +2,14 @@
 // opportunitiesList and opportunitiesForm components. It also stores the state for the
 // list of opportunities from the database. This component contains functions that poll
 // the database for opportunities and provides the AJAX for submission of new opportunities
-// to the database. 
+// to the database.
 
 import React, { Component } from 'react';
 import $ from 'jquery';
 
 import Navbar from '../navbar/navbar';
-import OpportunitiesList from './OpportunitiesList';
-import OpportunitiesForm from './OpportunitiesForm';
+import OpportunitiesList from './opportunitiesList';
+import OpportunitiesForm from './opportunitiesForm';
 import { API_OPPS, POLL_INTERVAL } from '../global';
 
 import '../../css/opportunities.css';
