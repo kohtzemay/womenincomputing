@@ -42,7 +42,7 @@ var SubscriptionBox = React.createClass({
       <form className="emailForm" onSubmit={this.handleSubmit}>
 
       <div className="input-field">
-        <label className="home" for= "name-text">Name</label>
+        <label className="home" htmlFor= "name-text">Name</label>
         <input
         className = "inputBox"
           type="text"
@@ -55,7 +55,7 @@ var SubscriptionBox = React.createClass({
       </div>
 
       <div className="input-field">
-        <label className="home" for="email-text">Email</label>
+        <label className="home" htmlFor="email-text">Email</label>
         <input
         className = "inputBox"
           type="email"
