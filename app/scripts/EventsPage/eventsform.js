@@ -1,3 +1,9 @@
+// EventsForm renders the form that allows users to submit new events
+// to the database. It holds the state attributes for a new opportunity and calls
+// the handleSubmit function defined in EventsMain when the post button is
+// clicked. 
+
+
 import React, { Component } from 'react';
 
 class EventsForm extends Component {
@@ -39,7 +45,7 @@ class EventsForm extends Component {
 
         <form className="eventsForm" onSubmit={this.handleSubmit}>
           <div className="input-field">
-            <label for=" Event-title">Title</label>
+            <label for=" Event-title">Event Name</label>
             <input
               type="text"
               name="name"
@@ -75,7 +81,7 @@ class EventsForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="description">Description</label>
+            <label for="description">Event Time</label>
             <textarea
               type="text"
               name="time"
