@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
     entry: [
         __dirname + '/app/scripts/index.js'

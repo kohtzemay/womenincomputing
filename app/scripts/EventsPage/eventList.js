@@ -1,19 +1,13 @@
-// OpportunitiesList is the component that lists out all the available opportunities
-// polled from the mLab database. It receives the list of opportunities as a prop from
-// OpportunitiesMain and maps through them, splitting them up by "job" and "internship"
-// based on the "type" key. 
-
 import React, { Component } from 'react';
 
-class OpportunitiesList extends Component {
+class EventsList extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div>
-        <h2>Internships</h2>
+      <div> 
         {this.props.data.map(function(o) {
           if (o.type == "internship") {
             return (
@@ -50,4 +44,5 @@ class OpportunitiesList extends Component {
 
 }
 
-export default OpportunitiesList;
+
+export default EventsList;
