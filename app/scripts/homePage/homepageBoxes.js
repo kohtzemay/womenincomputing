@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-DOM';
 import $ from 'jquery';
 import SubscriptionBox from './subscriptionBox';
 import {API_EMAILS} from "../global";

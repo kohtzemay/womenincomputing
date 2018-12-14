@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-DOM';
 
 {/*Creates the Form for the homepage's subscription box it sends the data to
 the database so we can track who is on the email list and who isn't*/}

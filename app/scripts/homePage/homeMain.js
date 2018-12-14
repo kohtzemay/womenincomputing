@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import HomepageBoxes from './homepageBoxes.js';
 import Navbar from '../navbar/navbar';
