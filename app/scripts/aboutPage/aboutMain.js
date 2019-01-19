@@ -34,7 +34,7 @@ class AboutMain extends Component {
               <div id="leadership">
                 <div className="row">
                   <div className="person">
-                    <img className="dp" src={require('./img/ziqi.jpg')} />
+                    <img className="dp" src={require('img/ziqi.jpg')} />
                       <div className="description">
                         <b>Ziqi Chen, President</b><br />
                         Graduating '19<br />
@@ -42,7 +42,7 @@ class AboutMain extends Component {
                   </div>
 
                   <div className="person">
-                    <img className="dp" src={require('./img/sarah.jpg')} />
+                    <img className="dp" src={require('img/sarah.jpg')} />
                       <div className="description">
                         <b>Sarah Samuel, VP + Treasurer</b><br />
                         Graduating '20<br />
@@ -52,7 +52,7 @@ class AboutMain extends Component {
 
                 <div className="row">
                   <div className="person">
-                    <img className="dp" src={require('./img/lauren.jpg')} />
+                    <img className="dp" src={require('img/lauren.jpg')} />
                       <div className="description">
                         <b>Lauren Ebels, Recruitment + Retention</b><br />
                         Graduating '20<br />
@@ -60,7 +60,7 @@ class AboutMain extends Component {
                   </div>
 
                   <div className="person">
-                    <img className="dp" src={require('./img/megan.jpg')} />
+                    <img className="dp" src={require('img/megan.jpg')} />
                       <div className="description">
                         <b>Megan Koh, Publicity Coordinator</b><br />
                         Graduating '19<br />
@@ -70,7 +70,7 @@ class AboutMain extends Component {
 
                 <div className="row">
                   <div className="person">
-                    <img className="dp" src={require('./img/judy.jpg')} />
+                    <img className="dp" src={require('img/judy.jpg')} />
                       <div className="description">
                         <b>Judy Kwon, Events Coordinator</b><br />
                         Graduating '19<br />
@@ -78,7 +78,7 @@ class AboutMain extends Component {
                   </div>
 
                   <div className="person">
-                    <img className="dp" src={require('./img/catherine.jpg')} />
+                    <img className="dp" src={require('img/catherine.jpg')} />
                       <div className="description">
                         <b>Catherine DeJager, Mentorship Coordinator</b><br />
                         Graduating '20<br />
@@ -87,7 +87,7 @@ class AboutMain extends Component {
                 </div>
 
                 <div className="person">
-                  <img className="dp" src={require('./img/joel.png')} />
+                  <img className="dp" src={require('img/joel.png')} />
                     <div className="description">
                       <b>Joel Adams, Mentor</b><br />
                       Computer Science Dept.<br />
@@ -111,7 +111,7 @@ class AboutMain extends Component {
                 <ul>
                   <li> Build community with women in CS </li>
                   <li> Interact with local CS companies (tours, speakers) </li>
-                  <li> Conferences (GH, MICWIC) </li>
+                  <li> Conferences (GHC, MICWIC) </li>
                   <li> CS Projects </li>
                 </ul>
               </div>
