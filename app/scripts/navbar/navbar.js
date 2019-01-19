@@ -27,7 +27,7 @@ class Navbar extends Component {
           <LoginBox />
         </div>
         <div id="navbar">
-          <div id="logo"><Link to='/'><img src={require('../../img/logo.png')} /></Link></div>
+          <div id="logo"><Link to='/'><img src={require('./img/logo.png')} /></Link></div>
           <div id="menu-items">
             <ul>
               <Link to='/'><li>Home</li></Link>

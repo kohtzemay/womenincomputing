@@ -11,7 +11,7 @@ class HomeMain extends Component {
       <div className="wholePage">
         <Navbar />
         <div className="centeringFactor">
-          <img className="HomePageImage" src={require('../../img/homeImg.png')} />
+          <img className="HomePageImage" src={require('./img/homeImg.png')} />
           <HomepageBoxes/ >
         </div>
       </div>
