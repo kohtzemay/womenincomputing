@@ -1,9 +1,9 @@
 var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
-var app = express();
 var MongoClient = require('mongodb').MongoClient;
 
+var app = express();
 var db;
 var APP_PATH = path.join(__dirname, 'dist');
 
@@ -11,7 +11,7 @@ app.set('port', (process.env.PORT || 3000));
 
 app.use('/', express.static(APP_PATH));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');

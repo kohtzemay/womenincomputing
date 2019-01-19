@@ -1,7 +1,7 @@
 // OpportunitiesForm renders the form that allows users to submit new opportunities
 // to the database. It holds the state attributes for a new opportunity and calls
 // the handleSubmit function defined in OpportunitiesMain when the Submit button is
-// clicked. 
+// clicked.
 
 import React, { Component } from 'react';
 
@@ -44,7 +44,7 @@ class OpportunitiesForm extends Component {
 
         <form className="opportunitiesForm" onSubmit={this.handleSubmit}>
           <div className="input-field">
-            <label for="job-title">Title</label>
+            <label htmlFor="job-title">Title</label>
             <input
               type="text"
               name="title"
@@ -56,7 +56,7 @@ class OpportunitiesForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="company-name">Company Name</label>
+            <label htmlFor="company-name">Company Name</label>
             <input
               type="text"
               name="companyName"
@@ -68,7 +68,7 @@ class OpportunitiesForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="location">Location</label>
+            <label htmlFor="location">Location</label>
             <input
               type="text"
               name="location"
@@ -80,7 +80,7 @@ class OpportunitiesForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="description">Description</label>
+            <label htmlFor="description">Description</label>
             <textarea
               type="text"
               name="description"
@@ -92,7 +92,7 @@ class OpportunitiesForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="link">link</label>
+            <label htmlFor="link">link</label>
             <input
               type="text"
               name="link"
@@ -104,7 +104,7 @@ class OpportunitiesForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="type">Type</label>
+            <label htmlFor="type">Type</label>
             <input
               type="text"
               name="type"

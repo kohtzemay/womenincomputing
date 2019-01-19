@@ -14,6 +14,8 @@ import { API_EVE, POLL_INTERVAL } from '../global';
 
 import '../../css/event.css';
 
+var fetching;
+
 class EventsMain extends Component {
   constructor() {
     super();
@@ -25,8 +27,11 @@ class EventsMain extends Component {
   }
 
   componentDidMount() {
-    this.loadFromServer();
-    setInterval(this.loadFromServer, POLL_INTERVAL);
+    fetching = setInterval(this.loadFromServer, POLL_INTERVAL);
+  }
+
+  componentWillUnmount(){
+    clearInterval(fetching);
   }
 
   loadFromServer() {
@@ -42,8 +47,6 @@ class EventsMain extends Component {
       }.bind(this)
     });
   }
-
-//
 
   handleSubmit(eve) {
     var events = this.state.data;

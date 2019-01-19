@@ -27,17 +27,13 @@
 
 .boxComp
 {
-    padding: 10px;
-    width: 25%;
-    height: 325px;
+    padding: 30px;
+    width: 22%;
+    height: 300px;
     border-radius: 15px;
-    border: 1px solid gray;
-    box-shadow:  -1px 1px gray,
-         -2px 2px gray,
-         -3px 3px gray,
-         -4px 4px gray,
-         -5px 5px gray;
+    box-shadow: -1px 0 20px 0 #666;
 }
+
 .head
 {
   color: rgb(255, 80, 80);
@@ -89,4 +85,21 @@
 .inputBox
 {
   width:60%;
+}
+
+a.boxLink {
+  border: 2px solid #ddd;
+  padding: 10px;
+  width: 90%;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+  transition: .5s;
+}
+
+a.boxLink:hover {
+  background: #ddd;
+  text-decoration: none;
 }

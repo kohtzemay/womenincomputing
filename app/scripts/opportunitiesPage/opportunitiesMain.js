@@ -14,6 +14,8 @@ import { API_OPPS, POLL_INTERVAL } from '../global';
 
 import '../../css/opportunities.css';
 
+var fetching;
+
 class OpportunitiesMain extends Component {
   constructor() {
     super();
@@ -25,8 +27,11 @@ class OpportunitiesMain extends Component {
   }
 
   componentDidMount() {
-    this.loadFromServer();
-    setInterval(this.loadFromServer, POLL_INTERVAL);
+    fetching = setInterval(this.loadFromServer, POLL_INTERVAL);
+  }
+
+  componentWillUnmount() {
+    clearInterval(fetching);
   }
 
   loadFromServer() {
@@ -35,7 +40,7 @@ class OpportunitiesMain extends Component {
       dataType: 'json',
       cache: false,
       success: function(data) {
-        this.setState({data: data});
+        this.setState({ data: data });
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(API_OPPS, status, err.toString());

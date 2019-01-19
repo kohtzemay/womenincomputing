@@ -45,7 +45,7 @@ class EventsForm extends Component {
 
         <form className="eventsForm" onSubmit={this.handleSubmit}>
           <div className="input-field">
-            <label for=" Event-title">Event Name</label>
+            <label htmlFor=" Event-title">Event Name</label>
             <input
               type="text"
               name="name"
@@ -57,7 +57,7 @@ class EventsForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="Event-name">EventDate</label>
+            <label htmlFor="Event-name">EventDate</label>
             <input
               type="text"
               name="date"
@@ -69,7 +69,7 @@ class EventsForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="location">Location</label>
+            <label htmlFor="location">Location</label>
             <input
               type="text"
               name="location"
@@ -81,7 +81,7 @@ class EventsForm extends Component {
           </div>
 
           <div className="input-field">
-            <label for="description">Event Time</label>
+            <label htmlFor="description">Event Time</label>
             <input
               type="text"
               name="time"

@@ -10,18 +10,23 @@ class EventsList extends Component {
   }
 
   render() {
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     return (
       <div>
         <h2>Events</h2>
 
         {this.props.data.map(function(o) {
+            var date = new Date(o.date);
             return (
               <div className="events" key={o._id}>
 
-                <h4>{o.name}</h4>
-                {o.date} <br />
-                {o.location} <br />
-                {o.time}
+                <div className="date">
+                  <div className="day">{date.getDay()}</div>
+                  <div className="month">{months[date.getMonth()]}</div>
+                </div>
+                <b>{o.name}</b><br />
+                {o.location} | {o.time}<br />
               </div>
             )
           }

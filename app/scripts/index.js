@@ -10,6 +10,7 @@ import HomeMain from './homePage/homeMain';
 import AboutMain from './aboutPage/aboutMain';
 import EventsMain from './eventsPage/eventsMain';
 import OpportunitiesMain from './opportunitiesPage/opportunitiesMain';
+import LoginBox from './admin/loginBox';
 
 // CSS components
 import '../css/navbar.css';
@@ -18,6 +19,7 @@ import '../css/base.css';
 import '../css/about.css';
 import '../css/opportunities.css';
 import '../css/event.css';
+import '../css/admin.css';
 
 ReactDOM.render(
   <Router history={browserHistory}>
