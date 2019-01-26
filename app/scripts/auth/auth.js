@@ -5,7 +5,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'wic-users.auth0.com',
     clientID: 'zfZNAxyigFqFXAGo7FRKLeBCi2CeYSal',
-    redirectUri: 'http://localhost:3000/callback',
+    redirectUri: 'https://wic-dev.herokuapp.com/callback',
     responseType: 'token id_token',
     audience: 'https://wic-users.auth0.com/api/v2/',
     scope: 'openid profile read:current_user'
