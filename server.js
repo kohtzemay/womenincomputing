@@ -2,6 +2,8 @@ var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
+const jwt = require('express-jwt');
+const jwksRsa = require('jwks-rsa');
 
 var app = express();
 var db;

@@ -71,7 +71,6 @@ class EventsMain extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div className="page">
           <h1>Events</h1>
 

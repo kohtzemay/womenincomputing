@@ -10,6 +10,11 @@ class LoginBox extends Component {
     }
 
     this.handleFieldChange = this.handleFieldChange.bind(this);
+    this.login = this.login.bind(this);
+  }
+
+  login() {
+    this.props.auth.login();
   }
 
   handleFieldChange(e) {

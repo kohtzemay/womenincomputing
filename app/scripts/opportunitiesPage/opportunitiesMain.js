@@ -71,7 +71,6 @@ class OpportunitiesMain extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div className="page">
           <h1>Opportunities</h1>
 

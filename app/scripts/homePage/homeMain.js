@@ -9,7 +9,6 @@ class HomeMain extends Component {
   render() {
     return (
       <div className="wholePage">
-        <Navbar />
         <div className="centeringFactor">
           <img className="HomePageImage" src={require('img/homeImg.png')} />
           <HomepageBoxes/ >

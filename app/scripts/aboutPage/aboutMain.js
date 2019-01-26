@@ -8,7 +8,6 @@ class AboutMain extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div className="page">
           <h1>About</h1>
 
