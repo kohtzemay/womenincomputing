@@ -7,8 +7,8 @@ export default class Auth {
     clientID: 'zfZNAxyigFqFXAGo7FRKLeBCi2CeYSal',
     redirectUri: 'https://wic-dev.herokuapp.com/callback',
     responseType: 'token id_token',
-    audience: 'https://wic-users.auth0.com/api/v2/',
-    scope: 'openid profile read:current_user'
+    audience: 'https://wic-dev.herokuapp.com/',
+    scope: 'openid profile read:current_user read:users'
   });
 
   constructor() {
